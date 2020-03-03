@@ -13,7 +13,7 @@ class ListContainer extends React.Component {
 function mapStateToProps(state) {
   console.log(state.loggedIn, state);
 
-  return { images: state.image, loggedIn: state.user };
+  return { images: state.images, loggedIn: state.user };
 }
 const mapDispatchToProps = { getImages };
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);

@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <ListContainer />
-        <div>hello world</div>
+        <div>Imageboard</div>
       </Provider>
     );
   }
