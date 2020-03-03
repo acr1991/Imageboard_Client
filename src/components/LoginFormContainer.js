@@ -4,10 +4,7 @@ import { connect } from "react-redux";
 import { login } from "../actions";
 
 class LoginFormContainer extends React.Component {
-  state = {
-    email: "",
-    password: ""
-  };
+  state = { email: "", password: "" };
 
   onSubmit = event => {
     event.preventDefault();
@@ -33,4 +30,5 @@ class LoginFormContainer extends React.Component {
     );
   }
 }
+
 export default connect(null, { login })(LoginFormContainer);

@@ -1,12 +1,9 @@
-const initialState = "";
+import { JWT } from "../actions";
 
-export default function(state = initialState, action) {
+export default function(state = "", action = {}) {
   switch (action.type) {
-    case "NEW_LOGIN":
+    case JWT:
       return action.payload;
-
-    case "NEW_USER":
-      return state;
     default:
       return state;
   }

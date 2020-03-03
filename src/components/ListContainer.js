@@ -2,18 +2,24 @@ import React from "react";
 import { getImages } from "../actions";
 import { connect } from "react-redux";
 import List from "./List";
+
 class ListContainer extends React.Component {
   componentDidMount() {
     this.props.getImages();
   }
+
   render() {
-    return <List loggedIn={this.props.loggedIn} images={this.props.images} />;
+    return <List images={this.props.images} user={this.props.user} />;
   }
 }
-function mapStateToProps(state) {
-  console.log(state.loggedIn, state);
 
-  return { images: state.images, loggedIn: state.user };
+function mapStateToProps(state) {
+  return {
+    images: state.images,
+    user: state.user
+  };
 }
+
 const mapDispatchToProps = { getImages };
+
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);

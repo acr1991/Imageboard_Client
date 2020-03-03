@@ -1,5 +1,5 @@
 import request from "superagent";
-
+export const JWT = "JWT";
 const baseUrl = "http://localhost:4000";
 
 export const getImages = () => (dispatch, getState) => {
@@ -39,7 +39,7 @@ export const createImage = data => (dispatch, getState) => {
     .catch(console.error);
 };
 
-export const login = data => dispatch => {
+export const login = data => (dispatch, getState) => {
   request
     .post(`${baseUrl}/login`)
     .send(data)
@@ -60,7 +60,7 @@ function newUser(data) {
 
 function newLogin(payload) {
   return {
-    type: "NEW_LOGIN",
+    type: "JWT",
     payload: payload
   };
 }

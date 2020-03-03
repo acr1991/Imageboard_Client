@@ -1,24 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class LoginForm extends Component {
-  render() {
-    console.log(this.props, "EMAIL PROPS");
-    return (
-      <form onSubmit={this.props.onSubmit}>
-        <input
-          onChange={this.props.onChange}
-          name="email"
-          value={this.props.values.email}
-          type="text"
-        />
-        <input
-          onChange={this.props.onChange}
-          name="password"
-          value={this.props.values.password}
-          type="text"
-        />
-        <button type="submit">Login</button>
-      </form>
-    );
-  }
+export default function CreateForm(props) {
+  const { onSubmit, onChange, values } = props;
+  const { email, password } = values;
+
+  return (
+    <form onSubmit={onSubmit}>
+      <input
+        type="text"
+        name="email"
+        value={email}
+        onChange={onChange}
+        placeholder="email"
+      />
+
+      <input
+        type="text"
+        name="password"
+        value={password}
+        onChange={onChange}
+        placeholder="password"
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
